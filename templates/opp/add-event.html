@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add person</title>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            padding-top: 50px; 
+        }
+
+        .custom-form {
+            background-color: #ffffff; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.986);
+            max-width: 400px;
+            max-height: 800px;
+            margin: 0 auto; 
+        }
+
+        .form-group {
+            margin-bottom: 40px; 
+        }
+
+        .btn-primary {
+            background-color: #01ff1b; 
+            border-color: #000000;
+            width: 30%; 
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9; 
+            border-color: #0062cc;
+        }
+    </style>
+</head>
+
+<!-- Bootstrap CSS kutubxonasi -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<body>
+
+<div class="custom-form membership-form shadow-lg">
+    <h4 class="text-white mb-4"></h4>
+    <form method="post" action="{% url 'add_event' %}" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-group mb-3">
+    
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
